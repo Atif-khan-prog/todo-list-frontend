@@ -33,7 +33,7 @@ const Main = ({onEntrySelect, entries, refreshEntries}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:3000/saveNewEntry', {
+      await fetch('https://todo-list-backend-zxay.onrender.com/saveNewEntry', {
         method: "POST",
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ title, description, createdAt: formatTime() })

@@ -18,7 +18,7 @@ const RightBar = ({ entry, onDelete, onUpdate }) => {
 
   const deleteEntry = async (id) => {
     try {
-      const res = await fetch(`http://localhost:3000/deleteEntry/${id}`, {
+      const res = await fetch(`https://todo-list-backend-zxay.onrender.com/deleteEntry/${id}`, {
         method: "DELETE",
       });
       console.log(await res.json());
@@ -30,7 +30,7 @@ const RightBar = ({ entry, onDelete, onUpdate }) => {
 
   const editEntry = async (id, title, description) => {
     try {
-      const res = await fetch('http://localhost:3000/editEntry', {
+      const res = await fetch('https://todo-list-backend-zxay.onrender.com/editEntry', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ id, title, description })
