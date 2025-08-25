@@ -14,7 +14,7 @@ const App = () => {
 
   const fetchEntries = async () => {
     try {
-      const response = await fetch('http://localhost:3000/getEntries');
+      const response = await fetch('https://todo-list-backend-zxay.onrender.com/getEntries');
       const data = await response.json();
       setEntries(data);
     } catch (err) {
