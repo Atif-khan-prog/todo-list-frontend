@@ -23,6 +23,8 @@ const RightBar = ({ entry, onDelete, onUpdate }) => {
       });
       console.log(await res.json());
       onDelete?.();
+      setTitle('');
+      setDescription('');
     } catch (err) {
       console.log(err);
     }
@@ -43,6 +45,8 @@ const RightBar = ({ entry, onDelete, onUpdate }) => {
         console.log('Update failed:', message.message);
       }
       onUpdate();
+      setTitle('')
+      setDescription('')
     } catch (err) {
       console.log(err);
     }
