@@ -17,7 +17,9 @@ const RightBar = ({ entry, onDelete, onUpdate }) => {
   }, [entry]);
 
   const deleteEntry = async (id) => {
-    try {
+    const isDelete = window.confirm("DO you want to delete the entry?");
+    if(isDelete){
+      try {
       const res = await fetch(`https://todo-list-backend-zxay.onrender.com/deleteEntry/${id}`, {
         method: "DELETE",
       });
@@ -27,6 +29,7 @@ const RightBar = ({ entry, onDelete, onUpdate }) => {
       setDescription('');
     } catch (err) {
       console.log(err);
+    }
     }
   };
 
